@@ -7,6 +7,8 @@ public class ButtonActivation : MonoBehaviour, IActivable
 
     bool isActivated = true;
     [SerializeField] GameObject animatedObject;
+    [SerializeField] AudioClip doorOpeningSound;
+    [SerializeField] AudioSource audioSource;
     
 
     public void OnActivated()
@@ -18,6 +20,8 @@ public class ButtonActivation : MonoBehaviour, IActivable
             GameManager.instance.currentUser.score -= 30;
             IHM.instance.UpdateIHM();
             animatedObject.GetComponent<Animator>().Play("DoorOpen");
+            audioSource.PlayOneShot(doorOpeningSound);
+
 
         }
         

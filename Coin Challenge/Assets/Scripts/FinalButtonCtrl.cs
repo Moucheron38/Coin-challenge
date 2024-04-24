@@ -5,6 +5,7 @@ using UnityEngine;
 public class FinalButtonCtrl : MonoBehaviour, IActivable
 {
     [SerializeField] List<ActivationCardSO> neededCards;
+    [SerializeField] GameObject panelWin;
     private bool isActivable
     {
         get
@@ -22,6 +23,11 @@ public class FinalButtonCtrl : MonoBehaviour, IActivable
     public void OnActivated()
     {
         if (!isActivable) return;
+
+        panelWin.SetActive(true);
+        GameManager.instance.TimeStop();
+
+        //Charger la scène finale
 
     }
 

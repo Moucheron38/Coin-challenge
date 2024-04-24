@@ -21,7 +21,7 @@ public class OnTriggerTips : MonoBehaviour
     {
         if (other.transform.tag == "Player")
         {
-            textTips.text = TipsManager.instance.tipsList[Random.Range(0, TipsManager.instance.tipsList.Count)]; ;
+            textTips.text = TipsManager.instance.tipsList[Random.Range(0, 4)] ;
         }
     }
 

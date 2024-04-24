@@ -11,7 +11,7 @@ public class TurretCtrl : MonoBehaviour
     [SerializeField] Transform rayCastStartPoint;
     RaycastHit hitInfo;
     [SerializeField] float minHeight, maxHeight;
-    [SerializeField] GameObject debugGO;
+    //[SerializeField] GameObject debugGO;
     [SerializeField] Collider triggerCollider;
     [SerializeField] float timer;
     [SerializeField] GameObject bullet;
@@ -115,7 +115,7 @@ public class TurretCtrl : MonoBehaviour
 
         if (hitInfo.collider == null) return false;
 
-        debugGO.transform.position = hitInfo.point;
+        //debugGO.transform.position = hitInfo.point;
 
         return hitInfo.collider.CompareTag("Player");
     }

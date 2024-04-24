@@ -10,16 +10,23 @@ public class TipsManager : MonoBehaviour
     [SerializeField] string curTips;
     public static TipsManager instance;
 
+    public TipsManager(List<string> tipsList)
+    {
+        this.tipsList = tipsList;
+
+    }
     private void Awake()
     {
         instance = this;
     }
     void Start()
     {
-        curTips = tipsList[Random.Range(0, tipsList.Count)];
-        textTips.text = curTips;
+        textTips.text = tipsList[Random.Range(0, 4)];
+
     }
 
-    
-    
+
+
+
+
 }

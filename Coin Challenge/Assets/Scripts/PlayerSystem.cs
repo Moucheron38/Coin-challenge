@@ -21,14 +21,14 @@ public class PlayerSystem : MonoBehaviour, IDamageable
 
     public void OnDamage()
     {
-        IHM.instance.UpdateLife(lifeSystem);
+       // IHM.instance.UpdateLife(lifeSystem);
         UpdatePlayerLifeVisual();
         
     }
 
     public void OnDeath()
     {
-        IHM.instance.UpdateLife(lifeSystem);
+       // IHM.instance.UpdateLife(lifeSystem);
         
 
         //Implémenter le restart et le freeze du jeu
