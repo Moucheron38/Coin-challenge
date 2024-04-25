@@ -11,7 +11,6 @@ public class EnemyController : MonoBehaviour, IDamageable
     [SerializeField] NavMeshAgent agent;
     private Coroutine activeCoroutine;
     public bool activeOnStart = true;
-
     [SerializeField] private WaypointPath _waypointPath;
 
     [SerializeField] private float _speed;
@@ -32,9 +31,6 @@ public class EnemyController : MonoBehaviour, IDamageable
     void Start()
     {
         if (activeOnStart) StartBehaviour(Behaviour.Patrol);
-
-
-
 
     }
 
@@ -76,10 +72,6 @@ public class EnemyController : MonoBehaviour, IDamageable
 
         return _targetWaypoint.position;
     }
-
-
-
-
 
 
     public void OnDamage()

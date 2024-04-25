@@ -14,6 +14,8 @@ public class PlayerMove : MonoBehaviour
     public Rigidbody rb;
     public bool isOnTheGround = true;
     Vector3 inputDir = Vector3.zero;
+    [SerializeField] bool isJumping;
+    
 
 
 
@@ -28,6 +30,12 @@ public class PlayerMove : MonoBehaviour
         {
             rb.AddForce(new Vector3(0, 5, 0), ForceMode.Impulse);
             isOnTheGround = false;
+            isJumping = true;
+            animator.SetBool("isJumping", true);
+            animator.SetBool("isGrounded", false);
+
+            
+            
         }
             
     }
@@ -40,7 +48,15 @@ public class PlayerMove : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ground") isOnTheGround = true;
+        if (collision.gameObject.tag == "Ground")
+        {
+            isOnTheGround = true;
+            isJumping = false;
+         
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isGrounded", true);
+            
+        }
     }
 
     private void Move()

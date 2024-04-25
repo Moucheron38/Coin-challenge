@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class PlayerSystem : MonoBehaviour, IDamageable
 {
@@ -12,6 +13,8 @@ public class PlayerSystem : MonoBehaviour, IDamageable
     [SerializeField] GameObject playerGO;
     [SerializeField] TextMeshProUGUI textLife;
     [SerializeField] Image lifeBar;
+    [SerializeField] AudioClip damageSound;
+    [SerializeField] AudioSource audiosource;
     public Transform targetPoint { get { return damagePoint; } }
 
     private void Start()
@@ -23,6 +26,7 @@ public class PlayerSystem : MonoBehaviour, IDamageable
     {
        // IHM.instance.UpdateLife(lifeSystem);
         UpdatePlayerLifeVisual();
+        audiosource.PlayOneShot(damageSound);
         
     }
 

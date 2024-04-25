@@ -10,6 +10,8 @@ public class IHM : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] public float elapsedTime;
     [SerializeField] LifeSystem lifeSystem;
+    [SerializeField] AudioClip orbSound;
+    [SerializeField] AudioSource audiosource;
 
     public static IHM instance;
 
@@ -22,7 +24,6 @@ public class IHM : MonoBehaviour
     private void Start()
     {
         UpdateIHM();
-        //UpdateLife(lifeSystem);
 
     }
 
@@ -37,6 +38,7 @@ public class IHM : MonoBehaviour
     public void UpdateIHM()
     {
         scoreText.text = "Energie : " + GameManager.instance.currentUser.score;
+        audiosource.PlayOneShot(orbSound);
 
     }
 

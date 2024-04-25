@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PressButtonDoor : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PressButtonDoor : MonoBehaviour
     [SerializeField] GameObject animatedObject;
     [SerializeField] GameObject thisButton;
     [SerializeField] GameObject gg;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip beepSound;
     bool action = false;
     private void OnTriggerEnter(Collider other)
     {

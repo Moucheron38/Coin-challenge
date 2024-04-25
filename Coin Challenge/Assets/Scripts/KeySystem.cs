@@ -15,6 +15,7 @@ public class KeySystem : MonoBehaviour, ICollectable
         pickupKey.Invoke();
         GameManager.instance.currentUser.score = GameManager.instance.currentUser.score + scoreValue;
         IHM.instance.UpdateIHM();
+        DoorEffectCtrl.UpdateState();
 
     }
 

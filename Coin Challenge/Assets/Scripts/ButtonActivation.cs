@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class ButtonActivation : MonoBehaviour, IActivable
 {
@@ -9,6 +10,7 @@ public class ButtonActivation : MonoBehaviour, IActivable
     [SerializeField] GameObject animatedObject;
     [SerializeField] AudioClip doorOpeningSound;
     [SerializeField] AudioSource audioSource;
+    [SerializeField] GameObject doorHolo;
     
 
     public void OnActivated()
@@ -21,6 +23,9 @@ public class ButtonActivation : MonoBehaviour, IActivable
             IHM.instance.UpdateIHM();
             animatedObject.GetComponent<Animator>().Play("DoorOpen");
             audioSource.PlayOneShot(doorOpeningSound);
+            DoorEffectCtrl.UpdateState();
+            doorHolo.SetActive(false);
+
 
 
         }

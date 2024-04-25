@@ -1,5 +1,72 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2682559116642966786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4404228067935010592}
+  - component: {fileID: 6032523612352133747}
+  - component: {fileID: 7917967790517451362}
+  m_Layer: 0
+  m_Name: WeakPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4404228067935010592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2682559116642966786}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.03, y: 0.82, z: 0.23}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7364411933281807888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6032523612352133747
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2682559116642966786}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7230892, y: 0.37613487, z: 0.6350479}
+  m_Center: {x: -0.0019760132, y: -0.31193256, z: 0.02349472}
+--- !u!114 &7917967790517451362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2682559116642966786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71e97cf5ed09b504ebe6fe2115b1940c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rumba: {fileID: 5454548479318379673}
 --- !u!1 &5454548479318379673
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +79,6 @@ GameObject:
   - component: {fileID: 8848967865959697703}
   - component: {fileID: 9176600057176820118}
   - component: {fileID: 5280564637109559156}
-  - component: {fileID: 1503594345604814200}
   m_Layer: 0
   m_Name: EnemyCubeofDeath (1)
   m_TagString: Enemy
@@ -51,6 +117,7 @@ MonoBehaviour:
   patrolBehaviour: 0
   agent: {fileID: 9176600057176820118}
   activeOnStart: 1
+  weakPoint: {fileID: 0}
   _waypointPath: {fileID: 0}
   _speed: 2
 --- !u!195 &9176600057176820118
@@ -94,29 +161,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 3
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &1503594345604814200
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5454548479318379673}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.6069584, y: 0.36927605, z: 0.64510345}
-  m_Center: {x: 0.020685196, y: 0.7816191, z: 0.27622604}
+  m_Radius: 3.0913725
+  m_Center: {x: 0, y: 0.09137249, z: 0}
 --- !u!1001 &9033337731742705327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -155,7 +201,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1976932269998262463, guid: 00b4a9d8107973647acd285cb5aa7caf, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 4404228067935010592}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00b4a9d8107973647acd285cb5aa7caf, type: 3}
 --- !u!4 &7364411933281807888 stripped
